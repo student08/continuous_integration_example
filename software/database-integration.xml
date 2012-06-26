@@ -194,18 +194,6 @@
 																										delimiter="//"/>
 																											</target>
 
-	<target name="db:drop-procedures" description="DROP procedures">
-			<echo>Dropping procedures...</echo>
-					<sql
-								driver="${db.driver}"
-											url="${db.url}"
-														userid="${db.username}"
-																	password="${db.password}"
-																				classpathref="db.lib.path"
-																							src="${database.dir}/drop-procedures.sql"
-																										delimiter=";"/>
-																											</target>
-																												
 	<target name="db:create-procedures" description="CREATE procedures">
 			<echo>Creating procedures...</echo>
 					<sql

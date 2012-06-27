@@ -62,7 +62,8 @@ namespace :deploy do
     run "sudo service tomcat6 restart"
   end
   
-  after "deploy:setup", "deploy:wildtracks_config"
+  after "deploy:setup", "deploy:deploy"
+  #after "deploy:setup", "deploy:wildtracks_config"
   # after "deploy:wildtracks_config", "deploy:httpd_conf"
   # after "deploy:httpd_conf", "deploy:deploy"
   after "deploy:deploy", "deploy:restart"

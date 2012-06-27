@@ -4,7 +4,7 @@ load '/usr/share/tomcat6/scripts/config/aws.config'
 
 sdb = AWS::SimpleDB.new
 
-set :sdb_domain, "cd08"
+set :sdb_domain, "target08"
 
 set :domain do
   item = sdb.domains["#{sdb_domain}"].items["parameters"]
@@ -22,7 +22,7 @@ set :ip_address do
 end
 
 set :user,             "ec2-user"
-set :use_sudo,         true 
+set :use_sudo,         false 
 set :deploy_to,        "/usr/share/tomcat6/webapps"
 set :artifact,         "brewery.war"
 set :artifact_url,     "https://s3.amazonaws.com/#{artifact_bucket}/#{artifact}"
